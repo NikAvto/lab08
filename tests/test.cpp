@@ -7,7 +7,7 @@
 class MockAccount : public Account {
  private:
   int id;
-  int balance;
+  int balance;  
  public:
   MockAccount(int id, int balance) : Account(id, balance) {}
   MOCK_METHOD(int, GetBalance, (), (const, override));
