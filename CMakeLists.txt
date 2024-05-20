@@ -5,6 +5,13 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(banking_app)
 
+set(BANKING_VERSION_MAJOR 0)
+set(BANKING_VERSION_MINOR 1)
+set(BANKING_VERSION_PATCH 0)
+set(BANKING_VERSION_TWEAK 0)
+set(BANKING_VERSION ${BANKING_VERSION_MAJOR}.${BANKING_VERSION_MINOR}.${BANKING_VERSION_PATCH}.${BANKING_VERSION_TWEAK})
+set(BANKING_VERSION_STRING "v${BANKING_VERSION}")
+
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/third-party/CMake-codecov/cmake" ${CMAKE_MODULE_PATH})
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/banking)
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/banking)
@@ -28,3 +35,5 @@ if (BUILD_TESTS)
     coverage_evaluate()
   endif ()
 endif ()
+
+include(CPackConfig.cmake)
